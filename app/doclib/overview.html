@@ -2,11 +2,12 @@
 Welcome to the Javadoc reference of the <b>Xposed Framework API</b>. It's meant for module developers who want to understand which classes and methods they can use. The most ones are:
 
 <ul>
-  <li style="margin: 0;">{@link de.robv.android.xposed.IXposedHookZygoteInit}</li>
-  <li style="margin: 0;">{@link de.robv.android.xposed.IXposedHookLoadPackage}</li>
-  <li style="margin: 0;">{@link de.robv.android.xposed.XposedHelpers#findAndHookMethod(String, ClassLoader, String, Object...) XposedHelpers.findAndHookMethod()}</li>
-  <li style="margin: 0;">{@link de.robv.android.xposed.IXposedHookInitPackageResources}</li>
-  <li style="margin: 0;">{@link android.content.res.XResources#setReplacement(String, String, String, Object) XResources.setReplacement()}
+  <li style="margin: 0;">{@link de.robv.android.fposed.IFposedHookZygoteInit}</li>
+  <li style="margin: 0;">{@link de.robv.android.fposed.IFposedHookLoadPackage}</li>
+  <li style="margin: 0;">{@link de.robv.android.fposed.FposedHelpers#findAndHookMethod(String,
+      ClassLoader, String, Object...) FposedHelpers.findAndHookMethod()}</li>
+  <li style="margin: 0;">{@link de.robv.android.fposed.IFposedHookInitPackageResources}</li>
+  <li style="margin: 0;">{@link android.content.res.FResources#setReplacement(String, String, String, Object) FResources.setReplacement()}
 </ul>
 
 If you're completely new to writing modules, you should read the <b><a href="https://github.com/rovo89/XposedBridge/wiki/Development-tutorial">tutorial</a></b> first.

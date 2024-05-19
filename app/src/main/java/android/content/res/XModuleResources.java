@@ -3,10 +3,10 @@ package android.content.res;
 import android.app.AndroidAppHelper;
 import android.util.DisplayMetrics;
 
-import de.robv.android.xposed.IXposedHookInitPackageResources;
-import de.robv.android.xposed.IXposedHookZygoteInit;
-import de.robv.android.xposed.IXposedHookZygoteInit.StartupParam;
-import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam;
+import de.robv.android.fposed.IFposedHookInitPackageResources;
+import de.robv.android.fposed.IFposedHookZygoteInit;
+import de.robv.android.fposed.IFposedHookZygoteInit.StartupParam;
+import de.robv.android.fposed.callbacks.FC_InitPackageResources.InitPackageResourcesParam;
 
 /**
  * Provides access to resources from a certain path (usually the module's own path).
@@ -20,8 +20,8 @@ public class XModuleResources extends Resources {
 	 * Creates a new instance.
 	 *
 	 * <p>This is usually called with {@link StartupParam#modulePath} from
-	 * {@link IXposedHookZygoteInit#initZygote} and {@link InitPackageResourcesParam#res} from
-	 * {@link IXposedHookInitPackageResources#handleInitPackageResources} (or {@code null} for
+	 * {@link IFposedHookZygoteInit#initZygote} and {@link InitPackageResourcesParam#res} from
+	 * {@link IFposedHookInitPackageResources#handleInitPackageResources} (or {@code null} for
 	 * system-wide replacements).
 	 *
 	 * @param path The path to the APK from which the resources should be loaded.

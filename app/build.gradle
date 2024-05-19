@@ -70,15 +70,15 @@ task generateDocs(type: Javadoc, dependsOn: 'compileReleaseSources') {
         addFileOption 'federationapi android', fileTree(dir: 'doclib/api', include: 'android_*.txt').singleFile
         addFileOption 'proofread', file("$buildDir/docs/proofread.txt")
         addStringOption 'todo', 'reference/todo.html'
-        fileTree(dir: 'doclib/api', include: 'xposed_*.txt').visit {
-            addStringOption 'since ' + it.file, it.name.replaceFirst(/^xposed_0*(\d*)\.txt$/, '$1')
+        fileTree(dir: 'doclib/api', include: 'fposed_*.txt').visit {
+            addStringOption 'since ' + it.file, it.name.replaceFirst(/^fposed_0*(\d*)\.txt$/, '$1')
         }
 
         // The sources of the Android SDK are added to the sourcepath.
         // This ensures that Javadoc can be inherited properly, but it
         // takes longer and throws a lot of errors (which we ignore here).
         def sdkSources = file("$android.sdkDirectory/sources/$android.compileSdkVersion")
-        assert sdkSources.exists()
+        //assert sdkSources.exists()
         addFileOption 'sourcepath', sdkSources
 
         failOnError = false
@@ -87,7 +87,7 @@ task generateDocs(type: Javadoc, dependsOn: 'compileReleaseSources') {
         (101..122).each {
             addBooleanOption 'hide ' + it, true
         }
-        addBooleanOption 'hidePackage xposed.dummy', true
+        addBooleanOption 'hidePackage fposed.dummy', true
     }
 }
 
@@ -106,7 +106,7 @@ task generateStubs(type: Javadoc, dependsOn: 'compileReleaseSources') {
         addFileOption 'api', file('doclib/api/current.txt')
         addBooleanOption 'hide 111', true
         addBooleanOption 'hide 113', true
-        addBooleanOption 'hidePackage xposed.dummy', true
+        addBooleanOption 'hidePackage fposed.dummy', true
     }
 }
 

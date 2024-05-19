@@ -12,15 +12,15 @@ import android.view.Display;
 import java.lang.ref.WeakReference;
 import java.util.Map;
 
-import de.robv.android.xposed.XSharedPreferences;
-import de.robv.android.xposed.XposedBridge;
+import de.robv.android.fposed.FSharedPreferences;
+import de.robv.android.fposed.FposedBridge;
 
-import static de.robv.android.xposed.XposedHelpers.findClass;
-import static de.robv.android.xposed.XposedHelpers.findFieldIfExists;
-import static de.robv.android.xposed.XposedHelpers.findMethodExactIfExists;
-import static de.robv.android.xposed.XposedHelpers.getObjectField;
-import static de.robv.android.xposed.XposedHelpers.newInstance;
-import static de.robv.android.xposed.XposedHelpers.setFloatField;
+import static de.robv.android.fposed.FposedHelpers.findClass;
+import static de.robv.android.fposed.FposedHelpers.findFieldIfExists;
+import static de.robv.android.fposed.FposedHelpers.findMethodExactIfExists;
+import static de.robv.android.fposed.FposedHelpers.getObjectField;
+import static de.robv.android.fposed.FposedHelpers.newInstance;
+import static de.robv.android.fposed.FposedHelpers.setFloatField;
 
 /**
  * Contains various methods for information about the current app.
@@ -66,7 +66,7 @@ public final class AndroidAppHelper {
 			else
 				return newInstance(CLASS_RESOURCES_KEY, resDir, scale);
 		} catch (Throwable t) {
-			XposedBridge.log(t);
+			FposedBridge.log(t);
 			return null;
 		}
 	}
@@ -81,7 +81,7 @@ public final class AndroidAppHelper {
 			else
 				return newInstance(CLASS_RESOURCES_KEY, resDir, displayId, overrideConfiguration, scale);
 		} catch (Throwable t) {
-			XposedBridge.log(t);
+			FposedBridge.log(t);
 			return null;
 		}
 	}
@@ -96,7 +96,7 @@ public final class AndroidAppHelper {
 			else
 				return newInstance(CLASS_RESOURCES_KEY, resDir, displayId, overrideConfiguration, scale, token);
 		} catch (Throwable t) {
-			XposedBridge.log(t);
+			FposedBridge.log(t);
 			return null;
 		}
 	}
@@ -106,7 +106,7 @@ public final class AndroidAppHelper {
 		try {
 			return newInstance(CLASS_RESOURCES_KEY, resDir, splitResDirs, overlayDirs, libDirs, displayId, overrideConfiguration, compatInfo);
 		} catch (Throwable t) {
-			XposedBridge.log(t);
+			FposedBridge.log(t);
 			return null;
 		}
 	}
@@ -200,24 +200,24 @@ public final class AndroidAppHelper {
 		return ActivityThread.currentApplication();
 	}
 
-	/** @deprecated Use {@link XSharedPreferences} instead. */
+	/** @deprecated Use {@link FSharedPreferences} instead. */
 	@SuppressWarnings("UnusedParameters")
 	@Deprecated
 	public static SharedPreferences getSharedPreferencesForPackage(String packageName, String prefFileName, int mode) {
-		return new XSharedPreferences(packageName, prefFileName);
+		return new FSharedPreferences(packageName, prefFileName);
 	}
 
-	/** @deprecated Use {@link XSharedPreferences} instead. */
+	/** @deprecated Use {@link FSharedPreferences} instead. */
 	@Deprecated
 	public static SharedPreferences getDefaultSharedPreferencesForPackage(String packageName) {
-		return new XSharedPreferences(packageName);
+		return new FSharedPreferences(packageName);
 	}
 
-	/** @deprecated Use {@link XSharedPreferences#reload} instead. */
+	/** @deprecated Use {@link FSharedPreferences#reload} instead. */
 	@Deprecated
 	public static void reloadSharedPreferencesIfNeeded(SharedPreferences pref) {
-		if (pref instanceof XSharedPreferences) {
-			((XSharedPreferences) pref).reload();
+		if (pref instanceof FSharedPreferences) {
+			((FSharedPreferences) pref).reload();
 		}
 	}
 }
