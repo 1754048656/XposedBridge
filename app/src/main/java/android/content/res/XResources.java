@@ -34,8 +34,8 @@ import de.robv.android.fposed.FposedBridge.CopyOnWriteSortedSet;
 import de.robv.android.fposed.callbacks.FC_LayoutInflated;
 import de.robv.android.fposed.callbacks.FC_LayoutInflated.LayoutInflatedParam;
 import de.robv.android.fposed.callbacks.FCallback;
-import fposed.dummy.FResourcesSuperClass;
-import fposed.dummy.FTypedArraySuperClass;
+import fposed.dummy.XResourcesSuperClass;
+import fposed.dummy.XTypedArraySuperClass;
 
 import static de.robv.android.fposed.FposedHelpers.decrementMethodDepth;
 import static de.robv.android.fposed.FposedHelpers.findAndHookMethod;
@@ -52,7 +52,7 @@ import static de.robv.android.fposed.FposedHelpers.incrementMethodDepth;
  * be set using the methods made available via the API methods in this class.
  */
 @SuppressWarnings("JniMissingFunction")
-public class XResources extends FResourcesSuperClass {
+public class XResources extends XResourcesSuperClass {
 	private static final SparseArray<HashMap<String, Object>> sReplacements = new SparseArray<>();
 	private static final SparseArray<HashMap<String, ResourceNames>> sResourceNames = new SparseArray<>();
 
@@ -1253,7 +1253,7 @@ public class XResources extends FResourcesSuperClass {
 	 * Mainly used when inflating layouts.
 	 * @hide
 	 */
-	public static class XTypedArray extends FTypedArraySuperClass {
+	public static class XTypedArray extends XTypedArraySuperClass {
 		/** Dummy, will never be called (objects are transferred to this class only). */
 		private XTypedArray() {
 			super(null, null, null, 0);

@@ -8,12 +8,12 @@ import android.content.res.TypedArray;
  *
  * This implementation isn't included in the .dex file. Instead, it's created on the device.
  * Usually, it will extend TypedArray, but some ROMs use their own TypedArray subclass.
- * In that case, FTypedArraySuperClass will extend the ROM's subclass in an attempt to increase
+ * In that case, XTypedArraySuperClass will extend the ROM's subclass in an attempt to increase
  * compatibility.
  */
-public class FTypedArraySuperClass extends TypedArray {
+public class XTypedArraySuperClass extends TypedArray {
 	/** Dummy, will never be called (objects are transferred to this class only). */
-	protected FTypedArraySuperClass(Resources resources, int[] data, int[] indices, int len) {
+	protected XTypedArraySuperClass(Resources resources, int[] data, int[] indices, int len) {
 		super(null, null, null, 0);
 		throw new UnsupportedOperationException();
 	}
