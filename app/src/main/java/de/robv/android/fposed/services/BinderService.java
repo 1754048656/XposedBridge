@@ -147,7 +147,7 @@ public final class BinderService extends BaseService {
 
 
 	// ----------------------------------------------------------------------------
-	private static final String INTERFACE_TOKEN = "de.robv.android.xposed.IXposedService";
+	private static final String INTERFACE_TOKEN = "de.robv.android.fposed.IXposedService";
 
 	private static final int ACCESS_FILE_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION + 2;
 	private static final int STAT_FILE_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION + 3;

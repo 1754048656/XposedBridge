@@ -45,7 +45,7 @@ public final class FposedBridge {
 	public static final ClassLoader BOOTCLASSLOADER = ClassLoader.getSystemClassLoader();
 
 	/** @hide */
-	public static final String TAG = "Xposed";
+	public static final String TAG = "Fposed";
 
 	/** @deprecated Use {@link #getXposedVersion()} instead. */
 	@Deprecated

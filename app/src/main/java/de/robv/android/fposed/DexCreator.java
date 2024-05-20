@@ -24,7 +24,7 @@ import static de.robv.android.fposed.FposedHelpers.inputStreamToByteArray;
 
 	/** Returns the default dex file name for the class. */
 	public static File getDefaultFile(String childClz) {
-		return new File(DALVIK_CACHE, "xposed_" + childClz.substring(childClz.lastIndexOf('.') + 1) + ".dex");
+		return new File(DALVIK_CACHE, "fposed_" + childClz.substring(childClz.lastIndexOf('.') + 1) + ".dex");
 	}
 
 	/**
@@ -37,7 +37,7 @@ import static de.robv.android.fposed.FposedHelpers.inputStreamToByteArray;
 		}
 
 		try {
-			return ensure("xposed.dummy." + clz + "SuperClass", realSuperClz);
+			return ensure("fposed.dummy." + clz + "SuperClass", realSuperClz);
 		} catch (IOException e) {
 			throw new IOException("Failed to create a superclass for " + clz, e);
 		}

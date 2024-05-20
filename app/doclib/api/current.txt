@@ -14,18 +14,18 @@ package android.app {
 
 package android.content.res {
 
-  public class FModuleResources extends android.content.res.Resources {
+  public class XModuleResources extends android.content.res.Resources {
     method public static android.content.res.XModuleResources createInstance(java.lang.String, android.content.res.XResources);
     method public android.content.res.XResForwarder fwd(int);
   }
 
-  public class FResForwarder {
-    ctor public FResForwarder(android.content.res.Resources, int);
+  public class XResForwarder {
+    ctor public XResForwarder(android.content.res.Resources, int);
     method public int getId();
     method public android.content.res.Resources getResources();
   }
 
-  public class FResources extends android.content.res.Resources {
+  public class XResources extends android.content.res.Resources {
     method public int addResource(android.content.res.Resources, int);
     method public static int getFakeResId(java.lang.String);
     method public static int getFakeResId(android.content.res.Resources, int);
@@ -45,20 +45,20 @@ package android.content.res {
     method public static void setSystemWideReplacement(java.lang.String, java.lang.String, java.lang.String, java.lang.Object);
   }
 
-  public static class FResources.DimensionReplacement {
-    ctor public FResources.DimensionReplacement(float, int);
+  public static class XResources.DimensionReplacement {
+    ctor public XResources.DimensionReplacement(float, int);
     method public float getDimension(android.util.DisplayMetrics);
     method public int getDimensionPixelOffset(android.util.DisplayMetrics);
     method public int getDimensionPixelSize(android.util.DisplayMetrics);
   }
 
-  public static abstract class FResources.DrawableLoader {
-    ctor public FResources.DrawableLoader();
+  public static abstract class XResources.DrawableLoader {
+    ctor public XResources.DrawableLoader();
     method public abstract android.graphics.drawable.Drawable newDrawable(android.content.res.XResources, int) throws java.lang.Throwable;
     method public android.graphics.drawable.Drawable newDrawableForDensity(android.content.res.XResources, int, int) throws java.lang.Throwable;
   }
 
-  public static class FResources.ResourceNames {
+  public static class XResources.ResourceNames {
     method public boolean equals(java.lang.String, java.lang.String, java.lang.String, int);
     field public final java.lang.String fullName;
     field public final int id;

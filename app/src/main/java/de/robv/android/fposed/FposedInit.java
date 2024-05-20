@@ -66,7 +66,7 @@ import static de.robv.android.fposed.FposedHelpers.setStaticObjectField;
 	private static final boolean startsSystemServer = FposedBridge.startsSystemServer();
 	private static final String startClassName = FposedBridge.getStartClassName();
 
-	private static final String INSTALLER_PACKAGE_NAME = "de.robv.android.xposed.installer";
+	private static final String INSTALLER_PACKAGE_NAME = "de.robv.android.fposed.installer";
 	@SuppressLint("SdCardPath")
 	private static final String BASE_DIR = Build.VERSION.SDK_INT >= 24
 			? "/data/user_de/0/" + INSTALLER_PACKAGE_NAME + "/"
@@ -470,7 +470,7 @@ import static de.robv.android.fposed.FposedHelpers.setStaticObjectField;
 
 	/**
 	 * Load a module from an APK by calling the init(String) method for all classes defined
-	 * in <code>assets/xposed_init</code>.
+	 * in <code>assets/fposed_init</code>.
 	 */
 	private static void loadModule(String apk, ClassLoader topClassLoader) {
 		Log.i(TAG, "Loading modules from " + apk);
@@ -509,15 +509,15 @@ import static de.robv.android.fposed.FposedHelpers.setStaticObjectField;
 		InputStream is;
 		try {
 			zipFile = new ZipFile(apk);
-			ZipEntry zipEntry = zipFile.getEntry("assets/xposed_init");
+			ZipEntry zipEntry = zipFile.getEntry("assets/fposed_init");
 			if (zipEntry == null) {
-				Log.e(TAG, "  assets/xposed_init not found in the APK");
+				Log.e(TAG, "  assets/fposed_init not found in the APK");
 				closeSilently(zipFile);
 				return;
 			}
 			is = zipFile.getInputStream(zipEntry);
 		} catch (IOException e) {
-			Log.e(TAG, "  Cannot read assets/xposed_init in the APK", e);
+			Log.e(TAG, "  Cannot read assets/fposed_init in the APK", e);
 			closeSilently(zipFile);
 			return;
 		}
